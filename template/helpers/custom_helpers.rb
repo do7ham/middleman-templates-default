@@ -18,9 +18,7 @@ module CustomHelpers
   def material_icon(name)
     content_tag(:i, name.to_s, class: 'material-icons')
   end
-  
   private
-  
   def icon_classes(*names)
     names[0].map{|name| "icon-#{name}"}
   end
@@ -55,5 +53,20 @@ module CustomHelpers
       end
     end
     list.join.html_safe
+  end
+  # Image URL
+  # ==================================
+  def image_url(source)
+    data.site.url + image_path(source)
+  end
+  # Host URL
+  # ==================================
+  def host_url(url)
+    URI.join(data.site.url, url)
+  end
+  # full_url
+  # ==================================
+  def full_url(path)
+    "#{config[:host]}#{path}"
   end
 end
