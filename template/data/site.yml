@@ -1,2 +1,22 @@
-url: 'URL'
-title: 'Title'
+lg              : 'de'
+url             : 'http://www.do7ham.de'
+name            : 'DO[7]HAM - HamRadio Station Bochum'
+title           : 'DO[7]HAM - HamRadio Station Bochum'
+title_separator : '•'
+author          : 'https://github.com/do7ham/do7ham.github.io'
+keywords        : 'Amateurfunk, DARC, N18, Ham'
+description     : 'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget Dolor'
+#Image
+image_url       : 'http://cdn.do7ham.de/assets/images/opengraph.svg'
+og_image_path   : 'http://cdn.do7ham.de/assets/images/opengraph.svg'
+icon_path       : '../assets/images/favicons'
+#Options
+theme_color     : '#0800C9'
+gplus           : 'https://plus.google.com/xxxxxxxxxxxxxxxxxxx'
+verify          : 'LKIp8JxbK2hb2tw_eI97mr5afi7WDbjvOp-eV7z7In4'
+#Twitter
+twitter         : '@do7ham'
+#Facebook
+og_type         : 'website'
+og_author       : 'https://www.facebook.com/###'
+og_publisher    : 'https://www.facebook.com/###'
