@@ -1,0 +1,13 @@
+links:
+  - name: Home
+    url: /
+    title: Startseite
+  - name: About
+    url: /about/
+    title: About
+  - name: Kontakt
+    url: /kontakt/
+    title: Kontakt
+  - name: Impressum
+    url: /impressum/
+    title: Impressum
