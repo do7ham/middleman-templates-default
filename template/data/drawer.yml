@@ -1,0 +1,13 @@
+list:
+  - name: '<i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i> Home'
+    url: '/'
+    title: 'Startseite'
+  - name: '<i class="material-icons mdc-list-item__graphic" aria-hidden="true">help_outline</i> About'
+    url: '/about/'
+    title: 'About'
+  - name: '<i class="material-icons mdc-list-item__graphic" aria-hidden="true">portrait</i> Kontakt'
+    url: '/kontakt/'
+    title: 'Kontakt'
+  - name: '<i class="material-icons mdc-list-item__graphic" aria-hidden="true">info_outline</i> Impressum'
+    url: '/impressum/'
+    title: 'Impressum'
