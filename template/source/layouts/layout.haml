@@ -1,21 +1,19 @@
 !!! 5
 %html.no-js{ lang: 'de' }
   %head
-
     %meta{ charset: 'UTF-8' }
     %meta{ content: 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
-
+    /Title
     %title= page_title
-
+    /Styles
     = stylesheet_link_tag 'application'
     = yield_content :head
 
   %body{ class: 'mdc-typography guth-body' }
-
     %main{ class: '', role: 'main' }
-      
       = yield
-
+    /Sripts
     = javascript_include_tag 'vendor'
     = javascript_include_tag 'application'
+    = component :init
