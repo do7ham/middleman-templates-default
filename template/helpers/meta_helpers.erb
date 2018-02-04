@@ -1,0 +1,142 @@
+module MetaHelpers
+  # Meta Title
+  # ==================================
+  def meta_title
+    site_title = data.site.title
+    page_title = current_page.data.title
+    separator  = data.site.title_separator
+    if page_title.nil? || page_title.empty?
+      return title = site_title
+    else
+      title = page_title
+    end
+    if title.blank?
+      puts "== path:#{current_page.url} title is missing on settings.yml"
+    elsif title.length > 70
+      puts "== path:#{current_page.url} title should be under 70 characters. You have: #{title.length}"
+    else
+      title += ' ' + separator + ' '
+      title += site_title
+      title
+    end
+  end
+  # Meta Name
+  # ==================================
+  def meta_name
+    ERB.new(current_page.data[:meta_name]).result(binding)
+  rescue
+    data.site.name
+  end
+  # Meta Description
+  # ==================================
+  def meta_description
+    site_description = data.site.description
+    page_description = current_page.data.description
+    if page_description.nil? || page_description.empty?
+      description = site_description
+    else
+      description = page_description
+    end
+    if description.nil? || description.empty?
+      puts "== path:#{current_page.url} meta description is missing on settings.yml"
+    elsif description.length > 150
+      puts "== path:#{current_page.url} meta description should be between 140-150 characters. You have: #{description.length}"
+    else
+      description
+    end
+  end
+  # Meta Keywords
+  # ==================================
+  def meta_keywords
+    ERB.new(current_page.data[:meta_keywords]).result(binding)
+  rescue
+    data.site.keywords
+  end
+  # Meta Author
+  # ==================================
+  def meta_author
+    ERB.new(current_page.data[:meta_author]).result(binding)
+  rescue
+    data.site.author
+  end
+  # Meta Twitter Handle
+  # ==================================
+  def meta_twitter
+    ERB.new(current_page.data[:meta_twitter]).result(binding)
+  rescue
+    data.site.twitter
+  end
+  # Meta_Theme_Color
+  # ==================================
+  def meta_theme_color
+    ERB.new(current_page.data[:meta_theme_color]).result(binding)
+  rescue
+    data.site.theme_color
+  end
+  # Meta Verify
+  # ==================================
+  def meta_verify
+    ERB.new(current_page.data[:meta_verify]).result(binding)
+  rescue
+    data.site.verify
+  end
+  # Meta Iconpath
+  # ==================================
+  def meta_iconpath
+    ERB.new(current_page.data[:meta_iconpath]).result(binding)
+  rescue
+    data.site.icon_path
+  end
+  # Meta Image
+  # ==================================
+  def meta_image
+    ERB.new(current_page.data[:meta_image]).result(binding)
+  rescue
+    data.site.image_url
+  end
+  # Meta Local
+  # ==================================
+  def meta_lg
+    ERB.new(current_page.data[:meta_lg]).result(binding)
+  rescue
+    data.site.lg
+  end
+  # Meta URL
+  # ==================================
+  def meta_url
+    ERB.new(current_page.data[:meta_url]).result(binding)
+  rescue
+    "#{data.site.url}#{current_page.url}"
+  end
+  def meta_current_url
+    ERB.new(current_page.data[:meta_current_url]).result(binding)
+  rescue
+    "#{data.site.url}#{current_page.url}"
+  end
+  # Meta URL
+  # ==================================
+  def meta_page_url
+    ERB.new(current_page.data[:meta_page_url]).result(binding)
+  rescue
+    "#{data.site.url}#{page.url}"
+  end
+  # Meta Tag URL
+  # ==================================
+  def meta_tag_url
+    host_url(current_page.url)
+  end
+  # Meta Google+
+  # ==================================
+  def meta_gplus
+    ERB.new(current_page.data[:meta_gplus]).result(binding)
+  rescue
+    data.site.gplus
+  end
+  # Meta og_type
+  # ==================================
+  def meta_og_type
+    ERB.new(current_page.data[:meta_og_type]).result(binding)
+  rescue
+    data.site.og_type
+  end
+end
