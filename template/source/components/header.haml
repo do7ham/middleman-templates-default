@@ -1,0 +1,44 @@
+/Toolbar
+%header.mdc-toolbar.mdc-toolbar--fixed.demo-toolbar
+  /Row
+  .mdc-toolbar__row.demo-toolbar__row
+    /Section Start
+    %section.mdc-toolbar__section.demo-toolbar__section.mdc-toolbar__section--align-start
+      /Menu
+      %button.demo-menu.material-icons.mdc-toolbar__menu-icon menu
+      /Logo
+      .mdc-toolbar__title.demo-toolbar__title.demo-toolbar__logo
+        = link_to '/' do
+          = svg_tag 'logos/logo.svg', title: 'Logo'
+    /Section End
+    %section.mdc-toolbar__section.demo-toolbar__section.mdc-toolbar__section--align-end{ role: 'toolbar' }
+      /Navigation
+      .demo-toolbar__nav
+        /Links
+        .demo-toolbar__nav-links
+          - data.nav.links.each do |d|
+            = current_link_to(d.name, d.url, title: d.title, class: 'demo-toolbar__nav-link')
+/Drawer
+%aside.mdc-drawer.mdc-drawer--temporary.demo-drawer
+  %nav.mdc-drawer__drawer
+    /Header
+    %header.mdc-drawer__header.demo-drawer__header
+      /Header Content
+      .mdc-drawer__header-content.demo-drawer__header-content
+        /User
+        .user-info
+          = image_tag('user/md.jpg', class: 'user__avatar', title: 'User Avatar', alt: 'User Avatar')
+          .user__name
+            DO
+            %b 7
+            HAM
+          .user__email
+            0172
+            %b> |
+            377 555 7
+    /Nav
+    %nav.mdc-drawer__content.demo-drawer__content.mdc-list-group
+      /List
+      #icon-with-text-demo.mdc-list
+        - data.drawer.list.each do |d|
+          = current_link_to(d.name, d.url, title: d.title, class: 'mdc-list-item demo-drawer__list-item')
